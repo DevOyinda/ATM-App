@@ -6,7 +6,8 @@ namespace ATM_App
     {
         static void Main()
         {
-            BankAccount.AtmMenuScreen();
+            BankAccount ba = new BankAccount();
+            ba.AtmMenuScreen();
         }
     }
 }

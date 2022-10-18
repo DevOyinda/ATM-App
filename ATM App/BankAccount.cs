@@ -8,15 +8,15 @@ namespace ATM_App
 {
     public class BankAccount
     {
-        public static string AccountNumber;
-        public static string Name;
-        public static int Pin;
-        public static int deposit;
-        public static int withdraw;
-        public static int selection;
-        public static string FilePath = @"C:\Users\oyins\Desktop\Oyinda\AtmDetails\";
+        public string AccountNumber;
+        public string Name;
+        public int Pin;
+        public int deposit;
+        public int withdraw;
+        public int selection;
+        public string FilePath = @"C:\Users\oyins\Desktop\Oyinda\AtmDetails\";
 
-        public static void AtmMenuScreen()
+        public void AtmMenuScreen()
         {
             Console.WriteLine("Welcome to Sukoko Bank ATM Services\nPlease Select a valid Option:\nPress 1 to process a transaction\nPress 2 to close the application.");
             selection = Convert.ToInt32(Console.ReadLine());
@@ -36,7 +36,7 @@ namespace ATM_App
             }
         }
 
-        public static void TransactionMenuScreen()
+        public void TransactionMenuScreen()
         {
             Console.WriteLine("Welcome to SUKOKO BANK!!!");
             Console.WriteLine("Enter your Name:");
@@ -88,7 +88,7 @@ namespace ATM_App
 
         }
 
-        public static void Menu()
+        public void Menu()
         {
             Console.WriteLine("Hey " + Name + ", WELCOME!!!");
 
@@ -133,14 +133,14 @@ namespace ATM_App
             }
         }
 
-        public static void CheckAccountBalance()
+        public void CheckAccountBalance()
         {
             var Balance = File.ReadAllText($"{FilePath}{AccountNumber}ab.txt");
             var accountBalance = Convert.ToInt32(Balance);
             Console.WriteLine("Your current account balance is " + accountBalance);
         }
 
-        public static void Withdraw()
+        public void Withdraw()
         {
             Console.WriteLine("Enter the amount to withdraw");
 
@@ -179,7 +179,7 @@ namespace ATM_App
             }
         }
 
-        public static void Deposit()
+        public void Deposit()
         {
             Console.WriteLine("Enter the amount to be deposited");
 
@@ -203,7 +203,7 @@ namespace ATM_App
             Console.WriteLine("The current balance in the account is " + currentBalance);
         }
 
-        public static void PrintReceipt()
+        public void PrintReceipt()
         {
             var printFile = File.ReadAllText($"{FilePath}{AccountNumber}bs.txt");
             Console.WriteLine("Processing...........\n===============\n");
